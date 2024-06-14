@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout with Burger Menu</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!-- navbar section -->
+    <div class="nav">
+        <div class="container">
+            <!-- Your logo or brand -->
+            <h1 id="title">Portfolio</h1>
+        </div>
+       
+        <div class="nav-links">
+            <p id="home" class="shine">Home</p>
+            <p id="about" class="shine">About</p>
+            <p id="projects" class="shine">Skills</p>
+            <p id="contact" class="shine">Contact</p>
+        </div>
+        <div class="burger" id="burger">
+            &#9776;
+        </div>
+    </div>
+
+    <!-- home section -->
+    <div class="home">
+        <div style="width: 50%;">
+            <h1 style="color: white;">👋 Hi, <span class="shine">Parkavi Muthukrishnan</span></h1>
+            <p>Dindigul, Tamil Nadu, 624701 | 9585748384 | parkavimuthukrishnan@gmail.com</p>
+            <p><a href="https://www.linkedin.com/in/parkavi-muthukrishnan-856025182/">LinkedIn</a> | <a href="https://github.com/PARKAVI739">GitHub</a></p>
+            <p>Experienced ReactJS Developer with 3 years of expertise in designing, developing, and deploying dynamic web applications. Proficient in JavaScript ES6+, React.js, and Next.js, with a demonstrated ability to build scalable and responsive user interfaces. Skilled in writing clear, reusable, and maintainable code following industry best practices. Strong advocate for modular development, ensuring code readability, security, and stability. Experienced in collaborating with teams to deliver high-quality software solutions.</p>
+        </div>
+        <div class="logo">
+            <img src="https://www.freepnglogos.com/uploads/javascript-png/javascript-nodejs-logo-27.png">
+            <div style="display: flex;gap: 60px;">
+                <img src="https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-html-logo-0.png">
+                <img src="https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png">
+
+            </div>
+           
+            <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png">
+        </div>
+    </div>
+
+    <!-- About section -->
+    <div class="about" style="display: none;">
+        <div>
+            <h2>About Me</h2>
+            <p>Experienced ReactJS Developer with 3 years of expertise in designing, developing, and deploying dynamic web applications.</p>
+            <p>Location: Dindigul, Tamil Nadu, 624701</p>
+            <p>Contact: 9585748384 | parkavimuthukrishnan@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/parkavi-muthukrishnan-856025182/">Parkavi Muthukrishnan</a></p>
+            <p>GitHub: <a href="https://github.com/PARKAVI739">PARKAVI739</a></p>
+        </div>
+    </div>
+
+    <!-- Skills section -->
+    <div class="skills" style="display: none;">
+        <div>
+            <h2>Skills</h2>
+            <ul>
+                <li>React.js</li>
+                <li>Next.js</li>
+                <li>JavaScript</li>
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Figma</li>
+                <li>Adobe XD</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact section -->
+    <div class="contact" style="display: none;">
+        <div>
+            <h2>Contact Me</h2>
+            <p>Dindigul, Tamil Nadu, 624701</p>
+            <p>Phone: 9585748384</p>
+            <p>Email: parkavimuthukrishnan@gmail.com</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/parkavi-muthukrishnan-856025182/">Parkavi Muthukrishnan</a></p>
+            <p>GitHub: <a href="https://github.com/PARKAVI739">PARKAVI739</a></p>
+        </div>
+    </div>
+
+    <!-- Projects section -->
+    <div class="line"></div>
+
+    <!-- JavaScript for burger menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burger = document.getElementById('burger');
+            const navLinks = document.querySelector('.nav-links');
+            const homeSection = document.querySelector('.home');
+            const aboutSection = document.querySelector('.about');
+            const skillsSection = document.querySelector('.skills');
+            const contactSection = document.querySelector('.contact');
+
+            burger.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+
+            document.getElementById('home').addEventListener('click', function() {
+                hideAllSections();
+                homeSection.style.display = 'block';
+            });
+
+            document.getElementById('about').addEventListener('click', function() {
+                hideAllSections();
+                aboutSection.style.display = 'block';
+            });
+
+            document.getElementById('projects').addEventListener('click', function() {
+                hideAllSections();
+                skillsSection.style.display = 'block';
+            });
+
+            document.getElementById('contact').addEventListener('click', function() {
+                hideAllSections();
+                contactSection.style.display = 'block';
+            });
+
+            function hideAllSections() {
+                homeSection.style.display = 'none';
+                aboutSection.style.display = 'none';
+                skillsSection.style.display = 'none';
+                contactSection.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
